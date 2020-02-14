@@ -5,21 +5,15 @@
 #include "product.h"
 
 class Item {
-public:
-    Item(const Product &product, int quantity);
-    Item(const Item &item);
-
-    const Product &getProduct() const;
-
-    int getQuantity() const;
-
-    double total() const;
-
-    void add(int qty);
-
-private:
-    Product product;
+    const Product *product;
     int quantity;
+public:
+    Item(const Product *product, int quantity);
+    Item(const Item &item);
+    const Product &getProduct() const;
+    int getQuantity() const;
+    double total() const;
+    void add (int qty);
 };
 
 

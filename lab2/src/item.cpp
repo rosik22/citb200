@@ -1,24 +1,24 @@
-#include <iostream>
 #include "item.h"
+#include <iostream>
 
-Item::Item(const Product &product, int quantity) : product(product), quantity(quantity) {}
+Item::Item(const Product *product, int quantity) : product(product), quantity(quantity) {}
 
-Item::Item(const Item &item) : Item(item.product, item.quantity) {
-    std::cout << " -- CopyItem " << item.product.getName() << std::endl;
+Item::Item(const Item &item) : Item(item.product, item.quantity){
+    std::cout << " -- CopyItem " << item.product->getName() << std::endl;
 }
 
-const Product &Item::getProduct() const {
-    return product;
+const Product &Item::getProduct() const{
+    return *product;
 }
 
-int Item::getQuantity() const {
+int Item::getQuantity() const{
     return quantity;
 }
 
-double Item::total() const {
-    return quantity * product.getPrice();
+double Item::total() const{
+    return quantity * product->getPrice();
 }
 
-void Item::add(int qty) {
+void Item::add (int qty){
     quantity += qty;
 }
