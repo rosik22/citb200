@@ -5,9 +5,14 @@
 #ifndef LAB3_DISCOUNTEDINVOICE_H
 #define LAB3_DISCOUNTEDINVOICE_H
 
+#include "invoice.h"
+#include "discount.h"
 
-class DiscountedInvoice {
-
+class DiscountedInvoice: public Invoice {
+    vector<Discount *> discounts;
+public:
+    void addDiscount(Discount *discount);
+    double subtotal() const;
 };
 
 
