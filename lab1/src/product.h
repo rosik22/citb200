@@ -10,6 +10,7 @@ class Product {
     double price;
 public:
     Product(const string &name, double price);
+    Product(const Product &other);
     const string &getName() const;
     double getPrice() const;
 };
