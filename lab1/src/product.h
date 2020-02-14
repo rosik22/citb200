@@ -6,7 +6,12 @@
 using std::string;
 
 class Product {
-
+    string name;
+    double price;
+public:
+    Product(const string &name, double price);
+    const string &getName() const;
+    double getPrice() const;
 };
 
 

@@ -5,7 +5,14 @@
 #include "product.h"
 
 class Item {
-
+    Product product;
+    int quantity;
+public:
+    Item(const Product &product, int quantity);
+    const Product &getProduct() const;
+    int getQuantity() const;
+    double total() const;
+    void add (int qty);
 };
 
 
