@@ -1,20 +1,14 @@
 #include "invoice.h"
 
-Invoice::~Invoice(){
-    for(int i=0; i<items.size(); i++){
-        delete items[i];
-    }
-}
-
-void Invoice::add(const Product *product, int qty) {
+void Invoice::add(const Product &product, int qty) {
     bool found = false;
     for(int i=0; i<items.size(); i++){
-        if (items[i]->getProduct.getName()== product->getName())
+        if (items[i].getProduct.getName()== product.getName())
             found = true;
-            items[i]->add(qty);
+            items[i].add(qty);
             break;
     }
-    if(!found) items.push_back(new Item(product,qty));
+    if(!found) items.push_back(Item(product,qty));
 }
 
 int Invoice::count() const{
@@ -22,21 +16,21 @@ int Invoice::count() const{
 }
 
 const Product &Invoice::productAt(int idx) const{
-    return items[idx]->getProduct();
+    return items[idx].getProduct();
 }
 
 int Invoice::quantityAt(int idx) const{
-    return items[idx]->getQuantity();
+    return items[idx].getQuantity();
 }
 
 double Invoice::totalAt(int idx) const{
-    return items[idx]->total();
+    return items[idx].total();
 }
 
 double Invoice::subtotal() const{
     double sum = 0;
     for(int i=0; i<items.size(); i++){
-        sum += items[i]->total();
+        sum += items[i].total();
     }
     return sum;
 }

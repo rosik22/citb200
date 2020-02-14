@@ -9,10 +9,9 @@
 using std::vector;
 
 class Invoice {
-    vector<Item *> items;
+    vector<Item > items;
 public:
-    ~Invoice();
-    void add(const Product *product, int qty);
+    void add(const Product &product, int qty);
     int count() const;
     const Product &productAt(int idx) const;
     int quantityAt(int idx) const;

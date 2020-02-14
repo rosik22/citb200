@@ -5,11 +5,10 @@
 #include "product.h"
 
 class Item {
-    const Product *product;
+    const Product product;
     int quantity;
 public:
-    Item(const Product *product, int quantity);
-    Item(const Item &item);
+    Item(const Product &product, int quantity);
     const Product &getProduct() const;
     int getQuantity() const;
     double total() const;
