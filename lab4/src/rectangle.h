@@ -8,4 +8,13 @@
 
 #include "shape.h"
 
+class Rectangle: public Shape{
+    double a,b;
+public:
+    ~Rectangle();
+    double perimeter() const;
+    double area() const;
+    istream &read (istream &in);
+};
+
 #endif //LAB4_RECTANGLE_H
