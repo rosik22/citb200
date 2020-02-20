@@ -9,6 +9,7 @@ int main(int argc, char *argv[]) {
     if (argc < 2) return -1;
 
     map<string, int> ans;
+    
     int i = argc - 1;
     string word;
     while(i>0){
